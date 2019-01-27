@@ -1,0 +1,1 @@
+export { default } from 'ember-validatable-input/components/validatable-input';
