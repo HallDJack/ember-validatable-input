@@ -1,0 +1,22 @@
+<div class="validatable-input__inputs">
+  {{input
+    autocomplete=autocomplete
+    classNames=htmlSafeInputClass
+    currency=currency
+    data-test="input"
+    focus-out=(action "onFocusOut")
+    key-up=(action "onKeyUp")
+    maxlength=maxlength
+    name=name
+    pattern=pattern
+    placeholder=placeholder
+    type=type
+    value=value
+  }}
+</div>
+
+{{#if showValidation}}
+  {{#if isInvalid}}
+    <div class="error" data-test-error>{{errors}}</div>
+  {{/if}}
+{{/if}}

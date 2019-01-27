@@ -1,0 +1,44 @@
+.validatable-input__inputs {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  input {
+    padding-right: 50px;
+  }
+}
+
+.validatable-input__toggle-type {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  font-size: 10px;
+  line-height: 22px;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.validatable-input--showing-validation.validatable-input--is-invalid {
+  input {
+    box-shadow: inset 0 0 0 1px $red;
+  }
+}
+
+.validatable-input--showing-validation.validatable-input--is-invalid {
+  input {
+    box-shadow: inset 0 0 0 1px $green;
+  }
+}
+
+.validatable-input__validation-symbol--valid {
+  width: 20px;
+  height: 20px;
+  margin-left: -34px;
+}
+
+.validatable-input__validation-symbol--invalid {
+  width: 20px;
+  height: 20px;
+  margin-left: -35px;
+}
