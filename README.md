@@ -1,4 +1,4 @@
-ember-validatable-input
+ember-validatable-input [![Build Status](https://travis-ci.org/HallDJack/ember-validatable-input.svg?branch=master)](https://travis-ci.org/HallDJack/ember-validatable-input)
 ==============================================================================
 
 A component that uses ember-cp-validations to wrap form inputs to provide a plug and play validated input.
