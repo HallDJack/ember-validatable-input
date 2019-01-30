@@ -5,10 +5,10 @@ import layout from '../templates/components/validatable-input';
 
 export default Component.extend({
   layout,
-  classNames: ['validatable-input'],
+  classNames: ['ember-validatable-input'],
   classNameBindings: [
-    'isInvalid:validatable-input--is-invalid:validatable-input--is-valid',
-    'showValidation:validatable-input--showing-validation'
+    'isInvalid:ember-validatable-input--is-invalid:ember-validatable-input--is-valid',
+    'showValidation:ember-validatable-input--showing-validation'
   ],
 
   allowInvalidDisplay: true,
