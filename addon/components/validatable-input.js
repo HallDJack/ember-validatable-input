@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { and, not, notEmpty } from '@ember/object/computed';
 import { htmlSafe } from '@ember/string';
 import layout from '../templates/components/validatable-input';
 
@@ -7,16 +8,19 @@ export default Component.extend({
   layout,
   classNames: ['ember-validatable-input'],
   classNameBindings: [
-    'isInvalid:ember-validatable-input--is-invalid:ember-validatable-input--is-valid',
+    'isInvalid:ember-validatable-input--is-invalid',
+    'isValid:ember-validatable-input--is-valid',
     'showValidation:ember-validatable-input--showing-validation'
   ],
 
   allowInvalidDisplay: true,
   allowValidDisplay: true,
-  errors: null,
-  isInvalid: computed.notEmpty('errors'),
-  isValid: computed.empty('errors'),
   currency: false,
+  errors: null,
+  hasErrors: notEmpty('errors'),
+  isInvalid: and('allowInvalidDisplay', 'hasErrors'),
+  isValid: and('allowValidDisplay', 'noErrors'),
+  noErrors: not('hasErrors'),
   readyToShowValidation: false,
 
   // Pass through normal input properties
