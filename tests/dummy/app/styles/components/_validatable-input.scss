@@ -21,13 +21,13 @@
 
 .ember-validatable-input--is-invalid {
   input {
-    box-shadow: inset 0 0 0 1px $red;
+    box-shadow: inset 0 0 0 5px $red;
   }
 }
 
-.ember-validatable-input--is-invalid {
+.ember-validatable-input--is-valid {
   input {
-    box-shadow: inset 0 0 0 1px $green;
+    box-shadow: inset 0 0 0 5px $green;
   }
 }
 

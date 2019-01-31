@@ -8,8 +8,8 @@ export default Component.extend({
   layout,
   classNames: ['ember-validatable-input'],
   classNameBindings: [
-    'showInvalid:ember-validatable-input--is-invalid',
-    'showValid:ember-validatable-input--is-valid'
+    'isInvalid:ember-validatable-input--is-invalid',
+    'isValid:ember-validatable-input--is-valid'
   ],
 
   allowInvalidDisplay: true,
@@ -21,6 +21,7 @@ export default Component.extend({
   isValid: and('allowValidDisplay', 'noErrors'),
   noErrors: not('hasErrors'),
   readyToShowValidation: false,
+  showErrors: true,
 
   // Pass through normal input properties
   autocomplete: null,
