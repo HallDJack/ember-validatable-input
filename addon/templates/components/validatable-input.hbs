@@ -15,8 +15,6 @@
   }}
 </div>
 
-{{#if showValidation}}
-  {{#if isInvalid}}
-    <div class="ember-validatable-input__error" data-test-error>{{errors}}</div>
-  {{/if}}
+{{#if isInvalid}}
+  <div class="ember-validatable-input__error" data-test-error>{{errors}}</div>
 {{/if}}

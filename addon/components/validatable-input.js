@@ -8,9 +8,8 @@ export default Component.extend({
   layout,
   classNames: ['ember-validatable-input'],
   classNameBindings: [
-    'isInvalid:ember-validatable-input--is-invalid',
-    'isValid:ember-validatable-input--is-valid',
-    'showValidation:ember-validatable-input--showing-validation'
+    'showInvalid:ember-validatable-input--is-invalid',
+    'showValid:ember-validatable-input--is-valid'
   ],
 
   allowInvalidDisplay: true,
@@ -41,21 +40,6 @@ export default Component.extend({
 
   htmlSafeInputClass: computed('inputClass', function() {
     return htmlSafe(this.get('inputClass') || '');
-  }),
-
-  showValidation: computed('isInvalid', 'readyToShowValidation', {
-    get() {
-      if (!this.get('readyToShowValidation')) {
-        return false;
-      }
-
-      return (this.get('isValid') && this.get('allowValidDisplay')) ||
-             (this.get('isInvalid') && this.get('allowInvalidDisplay'));
-    },
-
-    set(paramName, value) {
-      return value;
-    }
   }),
 
   actions: {
