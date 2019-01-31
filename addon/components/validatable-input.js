@@ -1,23 +1,27 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { and, not, notEmpty } from '@ember/object/computed';
 import { htmlSafe } from '@ember/string';
 import layout from '../templates/components/validatable-input';
 
 export default Component.extend({
   layout,
-  classNames: ['validatable-input'],
+  classNames: ['ember-validatable-input'],
   classNameBindings: [
-    'isInvalid:validatable-input--is-invalid:validatable-input--is-valid',
-    'showValidation:validatable-input--showing-validation'
+    'isInvalid:ember-validatable-input--is-invalid',
+    'isValid:ember-validatable-input--is-valid'
   ],
 
   allowInvalidDisplay: true,
   allowValidDisplay: true,
-  errors: null,
-  isInvalid: computed.notEmpty('errors'),
-  isValid: computed.empty('errors'),
   currency: false,
+  errors: null,
+  hasErrors: notEmpty('errors'),
+  isInvalid: and('allowInvalidDisplay', 'hasErrors'),
+  isValid: and('allowValidDisplay', 'noErrors'),
+  noErrors: not('hasErrors'),
   readyToShowValidation: false,
+  showErrors: true,
 
   // Pass through normal input properties
   autocomplete: null,
@@ -37,21 +41,6 @@ export default Component.extend({
 
   htmlSafeInputClass: computed('inputClass', function() {
     return htmlSafe(this.get('inputClass') || '');
-  }),
-
-  showValidation: computed('isInvalid', 'readyToShowValidation', {
-    get() {
-      if (!this.get('readyToShowValidation')) {
-        return false;
-      }
-
-      return (this.get('isValid') && this.get('allowValidDisplay')) ||
-             (this.get('isInvalid') && this.get('allowInvalidDisplay'));
-    },
-
-    set(paramName, value) {
-      return value;
-    }
   }),
 
   actions: {

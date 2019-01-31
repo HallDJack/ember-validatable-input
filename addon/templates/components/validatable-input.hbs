@@ -1,4 +1,4 @@
-<div class="validatable-input__inputs">
+<div class="ember-validatable-input__inputs">
   {{input
     autocomplete=autocomplete
     classNames=htmlSafeInputClass
@@ -15,8 +15,8 @@
   }}
 </div>
 
-{{#if showValidation}}
-  {{#if isInvalid}}
-    <div class="error" data-test-error>{{errors}}</div>
+{{#if showErrors}}
+  {{#if hasErrors}}
+    <div class="ember-validatable-input__error" data-test-error>{{errors}}</div>
   {{/if}}
 {{/if}}
