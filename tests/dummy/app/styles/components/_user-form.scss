@@ -1,0 +1,10 @@
+.form {
+  background: $base2;
+  border-radius: 1.5px;
+  padding: 25px;
+  @include box-shadow(1px,1px,5px,0, $base03);
+
+  &__field {
+    font-size: 14px;
+  }
+}

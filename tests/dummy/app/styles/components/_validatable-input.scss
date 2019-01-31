@@ -1,38 +1,43 @@
-.validatable-input__inputs {
-  display: flex;
-  position: relative;
-  align-items: center;
+.ember-validatable-input {
+  &__inputs {
+    display: flex;
+    position: relative;
+    align-items: center;
 
-  input {
-    padding-right: 50px;
+    input {
+      border: 0;
+      height: 20px;
+      padding-right: 50px;
+    }
   }
-}
 
-.validatable-input__toggle-type {
-  position: absolute;
-  right: 20px;
-  top: 30%;
-  font-size: 10px;
-  line-height: 22px;
-  font-weight: $font-weight-semibold;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.ember-validatable-input--is-invalid {
-  input {
-    box-shadow: inset 0 0 0 5px $red;
+  &__toggle-type {
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    font-size: 10px;
+    line-height: 22px;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    cursor: pointer;
   }
-}
 
-.ember-validatable-input--is-valid {
-  input {
-    box-shadow: inset 0 0 0 5px $green;
+  &--is-invalid {
+    input {
+      box-shadow: inset 0 0 0 1px $red;
+    }
   }
-}
 
-.ember-validatable-input__error {
-  color: $red;
+  &--is-valid {
+    input {
+      // box-shadow: inset 0 0 0 1px $green;
+    }
+  }
+
+  &__error{
+    color: $red;
+    font-size: 10px;
+  }
 }
 
 .validatable-input__validation-symbol--valid {

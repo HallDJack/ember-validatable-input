@@ -1,0 +1,44 @@
+<div class="form">
+  <div id="username" class="form__field">
+    <p>Username</p>
+    {{validatable-input
+      errors=usernameErrors
+      inputClass="text"
+      value=username
+    }}
+  </div>
+  <div id="email" class="form__field">
+    <p>Email</p>
+    {{validatable-input
+      errors=emailErrors
+      inputClass="text"
+      value=email
+    }}
+  </div>
+  <div id="email-confirmation" class="form__field">
+    <p>Email Confirmation</p>
+    {{validatable-input
+      errors=emailConfirmationErrors
+      inputClass="text"
+      value=emailConfirmation
+    }}
+  </div>
+  <div id="password" class="form__field">
+    <p>Password</p>
+    {{validatable-input
+      errors=passwordErrors
+      inputClass="password"
+      maxlength=8
+      value=password
+    }}
+  </div>
+  <div id="wage" class="form__field">
+    <p>Wage</p>
+    {{validatable-input
+      errors=wageErrors
+      currency=true
+      inputClass="number"
+      value=wage
+    }}
+  </div>
+</div>
