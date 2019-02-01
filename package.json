@@ -1,6 +1,6 @@
 {
   "name": "ember-validatable-input",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A component that uses ember-cp-validations to wrap form inputs to provide a plug and play validated input.",
   "keywords": [
     "ember-addon", "input", "validation"
