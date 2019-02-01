@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A component that uses ember-cp-validations to wrap form inputs to provide a plug and play validated input.",
   "keywords": [
-    "ember-addon"
+    "ember-addon", "input", "validation"
   ],
   "repository": "https://github.com/HallDJack/ember-validatable-input",
   "license": "MIT",
