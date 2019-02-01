@@ -14,14 +14,14 @@ export default Component.extend({
 
   allowInvalidDisplay: true,
   allowValidDisplay: true,
-  currency: false,
   errors: null,
+  showErrors: true,
+
   hasErrors: notEmpty('errors'),
   isInvalid: and('allowInvalidDisplay', 'hasErrors'),
   isValid: and('allowValidDisplay', 'noErrors'),
   noErrors: not('hasErrors'),
   readyToShowValidation: false,
-  showErrors: true,
 
   // Pass through normal input properties
   autocomplete: null,
@@ -32,12 +32,6 @@ export default Component.extend({
   placeholder: null,
   type: 'text',
   value: null,
-
-  didInsertElement() {
-    if (this.get('currency')) {
-      this.$('input').inputmask('Regex', { regex: '[0-9]+.?[0-9]+' });
-    }
-  },
 
   htmlSafeInputClass: computed('inputClass', function() {
     return htmlSafe(this.get('inputClass') || '');
