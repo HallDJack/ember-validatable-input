@@ -42,7 +42,7 @@ export default Component.extend({
       this.set('readyToShowValidation', true);
 
       if (this.attrs.onFocusOut) {
-        this.attrs.onFocusOut(this);
+        this.get('onFocusOut')();
       }
     },
 
@@ -53,7 +53,7 @@ export default Component.extend({
     // Reference: https://github.com/emberjs/ember.js/issues/11678
     onKeyUp() {
       if (this.attrs.onChange) {
-        this.attrs.onChange(this.get('value'));
+        this.get('onChange')(this.get('value'));
       }
       return true;
     }
