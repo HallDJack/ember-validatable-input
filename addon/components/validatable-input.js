@@ -15,12 +15,13 @@ export default Component.extend({
   allowInvalidDisplay: true,
   allowValidDisplay: true,
   errors: null,
+  showErrors: true,
+
   hasErrors: notEmpty('errors'),
   isInvalid: and('allowInvalidDisplay', 'hasErrors'),
   isValid: and('allowValidDisplay', 'noErrors'),
   noErrors: not('hasErrors'),
   readyToShowValidation: false,
-  showErrors: true,
 
   // Pass through normal input properties
   autocomplete: null,
