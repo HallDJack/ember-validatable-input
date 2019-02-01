@@ -25,8 +25,8 @@ Usage
 ------------------------------------------------------------------------------
 
 ### Options
-// form.hbs
 ```hbs
+// form.hbs
 {{validatable-input
   //Validation
   allowInvalidDisplay=true //Allow the component to show an invalid style when there are errors (default: true).
